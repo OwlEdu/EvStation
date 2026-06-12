@@ -1,3 +1,4 @@
+import os
 from pymongo import MongoClient
 import requests
 import time
@@ -6,11 +7,9 @@ import time
 # 설정
 # ==================================
 
-MONGO_URI = "mongodb+srv://yujuo:1999@cluster0.6m5p2.mongodb.net/vibe_db?retryWrites=true&w=majority"
-
-PUBLIC_API_KEY = "CDRN5v4uN5zCfl5eiEZNZmMsCj5CRTOjmivQN8ReO529dyIE4VcXkcV7uPclUdddyoSBBPvWhgrumMvJe9r0vw=="
-
-KAKAO_REST_KEY = "96c25afc0d9df4197d61090a3c5d06a2"
+MONGO_URI = os.environ.get("MONGO_URI")
+PUBLIC_API_KEY = os.environ.get("PUBLIC_API_KEY")
+KAKAO_REST_KEY = os.environ.get("KAKAO_REST_KEY")
 
 API_URL = (
     "https://api.odcloud.kr/api/15086278/v1/"
